@@ -41,27 +41,29 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-html, body {
-  height: 100%; }
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%; }
 
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: table;
-  font-weight: 100;
-  font-family: 'Lato'; }
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  font-family: 'Lato', sans-serif; }
 
-.container {
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle; }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5; }
 
 .content {
-  text-align: center;
-  display: inline-block; }
+  margin-top: 100px; }
 
-.title {
-  font-size: 96px; }
+.footercontent {
+  margin-top: 20px; }
 
 /*# sourceMappingURL=app.css.map */
