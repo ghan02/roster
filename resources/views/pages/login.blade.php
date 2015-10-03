@@ -3,6 +3,8 @@
 @section('content')
 	<div class="text-center">
 		<div class="col-md-8 col-md-offset-2">
+		
+
 			<div class="panel panel-default">
 			    <div class="panel-heading">
 				    Sign in to your account
@@ -34,7 +36,11 @@
 							</div>
 						</div>
 					</form>
+
 				</div>
+			</div>
+			<div class="alert alert-info">
+				<p><span class="lnr lnr-bullhorn"></span>  If you need access please contact your Roster Admin. He/She will create an account for you . Only then you will be able to login. Click <a href="#">here</a> to send an email to your Roster Admin.</p>
 			</div>
 		</div>
 	</div>
