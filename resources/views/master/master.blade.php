@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Roster</title>
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	@include('master.partials.styles')
 </head>
 <body>

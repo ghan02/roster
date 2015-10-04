@@ -11,3 +11,9 @@ Route::get('/', function () {
 Route::get('/',['as'=>'pages.home','uses'=>'PagesController@home']);
 
 Route::get('login',['as'=>'pages.login','uses'=>'PagesController@login']);
+
+// login user 
+Route::post('login',['as'=>'user.login','uses'=>'SessionsController@login']);
+
+// user profile
+Route::get('profile',['as'=>'user.profile','uses'=>'PagesController@profile']);

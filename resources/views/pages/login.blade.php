@@ -9,26 +9,26 @@
 			    <div class="panel-heading">
 				    Sign in to your account
 				</div>
-				<div class="panel-body">
+				<div class="panel-body" id="login">
 				    <form class="form-horizontal" role="form">
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">E-Mail Address</label>
 							<div class="col-md-6">
-								<input type="email" class="form-control">
+								<input type="email" class="form-control" v-model="username">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control">
+							<div class="col-md-6"> 
+								<input type="password" class="form-control" v-model="password">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="col-md-offset-2">
-								<a href="#" class="btn btn-primary">
+								<a href="#" class="btn btn-primary" v-on="click:this.performLogin()">
 									<span class="lnr lnr-checkmark-circle"></span> Login
 								</a>
 								<a class="btn btn-link" href="#">Forgot Your Password?</a>
@@ -36,7 +36,7 @@
 							</div>
 						</div>
 					</form>
-
+					
 				</div>
 			</div>
 			<div class="alert alert-info">
@@ -44,4 +44,11 @@
 			</div>
 		</div>
 	</div>
+@stop
+
+@section('scripts')
+	{!!Html::script('js/login.js')!!}
+	<script>
+
+	</script>
 @stop

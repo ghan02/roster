@@ -16,4 +16,9 @@ class PagesController extends Controller
     {
     	return view('pages.login');
     }
+
+    public function profile()
+    {
+    	return view('users.profile');
+    }
 }
