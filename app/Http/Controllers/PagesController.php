@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Rosterevent;
+use Auth;
+
 
 class PagesController extends Controller
 {
@@ -20,5 +23,11 @@ class PagesController extends Controller
     public function profile()
     {
     	return view('users.profile');
+    }
+
+    public function myevents()
+    {
+        
+        return view('users.events.myevents');
     }
 }

@@ -3,6 +3,7 @@
 {!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.16/vue.min.js')!!}
 {!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.1.16/vue-resource.min.js')!!}
 {!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js')!!}
+{!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.6.2/vue-router.min.js')!!}
 
 <script>
 

@@ -27,6 +27,7 @@ body {
 }
 
 .alert {
+  font-size: 14px;
   line-height: 150%;
 }
 
@@ -36,4 +37,25 @@ a {
 
 a:hover {
   color:#D32F2F;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  
+}
+.highlight {
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid red;
+}
+
+small {
+  font-size: 13px;
+}
+
+.breadcrumb {
+  background-color: transparent;
+  font-size: 13px;
+  width: 99%;
 }

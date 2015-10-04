@@ -14,6 +14,14 @@ Route::get('login',['as'=>'pages.login','uses'=>'PagesController@login']);
 
 // login user 
 Route::post('login',['as'=>'user.login','uses'=>'SessionsController@login']);
+// logout user
+Route::get('logout',['as'=>'user.logout','uses'=>'SessionsController@logout']);
+
+// profile options
+$router->group(['middleware'=>'auth'], function($router) {
+	Route::get('profile',['as'=>'user.profile','uses'=>'PagesController@profile']);
+	Route::get('profile/events',['as'=>'user.events','uses'=>'PagesController@myevents']);
+
+});
 
 // user profile
-Route::get('profile',['as'=>'user.profile','uses'=>'PagesController@profile']);

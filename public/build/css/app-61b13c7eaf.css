@@ -67,6 +67,7 @@ body {
   margin-top: 20px; }
 
 .alert {
+  font-size: 14px;
   line-height: 150%; }
 
 a {
@@ -74,6 +75,23 @@ a {
 
 a:hover {
   color: #D32F2F; }
+
+h4 {
+  font-size: 16px;
+  font-weight: bold; }
+
+.highlight {
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid red; }
+
+small {
+  font-size: 13px; }
+
+.breadcrumb {
+  background-color: transparent;
+  font-size: 13px;
+  width: 99%; }
 
 /* Profile container */
 .profile {
@@ -158,5 +176,8 @@ a:hover {
   padding: 20px;
   background: #fff;
   min-height: 460px; }
+
+.pageImage {
+  width: 70px; }
 
 /*# sourceMappingURL=app.css.map */

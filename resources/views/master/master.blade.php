@@ -12,6 +12,7 @@
 	<!-- Begin page content -->
 	 <div class="container ">
 	   <div class="content">
+	   		@yield('breadcrumb')
 	   		@yield('content')
 	   </div>
 	 </div>
