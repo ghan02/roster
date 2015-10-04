@@ -33,7 +33,7 @@
 						<ul class="nav">
             				{!!HTML::navlink('user.profile', '<span class="lnr lnr-home"></span> Home')!!}
             				{!!HTML::navlink('user.events', '<span class="lnr lnr-rocket"></span> Events')!!}
-            				{!!HTML::navlink('user.profile', '<span class="lnr lnr-cog"></span> Account Settings')!!}
+            				{!!HTML::navlink('user.settings', '<span class="lnr lnr-cog"></span> Settings')!!}
 						</ul>
 					</div>
 					<!-- END MENU -->

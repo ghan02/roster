@@ -59,3 +59,12 @@ small {
   font-size: 13px;
   width: 99%;
 }
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 14px;
+}

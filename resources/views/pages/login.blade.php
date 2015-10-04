@@ -22,7 +22,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Password</label>
 							<div class="col-md-6"> 
-								<input type="password" class="form-control" v-model="password">
+								<input type="password" class="form-control" v-model="password" v-on="keyup:this.performLogin() | key 'enter'">
 							</div>
 						</div>
 

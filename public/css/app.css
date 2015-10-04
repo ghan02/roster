@@ -93,6 +93,13 @@ small {
   font-size: 13px;
   width: 99%; }
 
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+  border: none; }
+
+label {
+  margin-bottom: 10px;
+  font-size: 14px; }
+
 /* Profile container */
 .profile {
   margin: 20px 0; }
@@ -178,6 +185,9 @@ small {
   min-height: 460px; }
 
 .pageImage {
-  width: 70px; }
+  width: 80px; }
+
+.manager {
+  width: 40px; }
 
 /*# sourceMappingURL=app.css.map */

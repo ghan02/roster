@@ -30,4 +30,8 @@ class PagesController extends Controller
         
         return view('users.events.myevents');
     }
+    public function settings()
+    {
+        return view('users.settings');
+    }
 }
