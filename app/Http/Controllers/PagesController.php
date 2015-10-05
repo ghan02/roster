@@ -39,29 +39,17 @@ class PagesController extends Controller
     {
         if(Auth::check())
         {
-            // dd();
             return response()->json(['events' => Auth::user()->events()->with('Attachments')->get()]);
         }
         else 
             return Response::json(array('events'=>''));
     }
-    public function getAttachmentsForEvent($eventID)
-    {
-        if(Auth::check())
-        {
 
-            $attachments = Auth::user()->events()->where('id',$eventID)->first()->attachments();
-            // dd($attachments->get());
-            
-            if((empty($attachments) || is_null($attachments)) && !isset($attachments))
-                return response()->json(['attachments','']);
-            else
-            {
-                return response()->json(['attachments' => $attachments->get()]);
-            };
-        }
-        else 
-            return Response::json(array('events'=>''));
+    public function downloadfile($file)
+    {
+       $file= public_path(). $file;
+       return Response::download($file);
     }
+
 
 }

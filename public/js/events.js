@@ -24,7 +24,11 @@ new Vue({
                 modal.find('#requestCreatedOn').text(event.created_at);
                 modal.find('#lastUpdatedOn').text(event.updated_at);
                 modal.find('#notes').text(event.notes);
-                modal.find('#attachment').text(event.attachments[0].filename);
+                modal.find('#attachment ul').empty();
+                for (var i = 0; i < event.attachments.length; i++) {
+                	modal.find('#attachment ul').append('<li> <a href="'+event.attachments[i].location+'" target="_blank">'+event.attachments[i].filename+'</a> </li>')
+                }
+                // modal.find('#attachment').text(event.attachments[0].filename);
             });
 
             $('#moreInfo').modal('show');

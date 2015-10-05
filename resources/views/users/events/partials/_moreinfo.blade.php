@@ -15,7 +15,7 @@
           <dd id="lastUpdatedOn"></dd>
           <dt>Current attachments</dt>
           <dd id="attachment">
-          	
+          	<ul></ul>
           </dd>
           <dt>Notes</dt>
           <dd><p id="notes"></p></dd>

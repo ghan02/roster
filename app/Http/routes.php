@@ -24,7 +24,7 @@ $router->group(['middleware'=>'auth'], function($router) {
 	Route::get('profile/settings',['as'=>'user.settings','uses'=>'PagesController@settings']);
 	Route::resource('events','RostereventController');
 	Route::resource('getUserEvents','PagesController@getUserEvents');
-	Route::resource('getAttachmentsForEvent/{eventID}','PagesController@getAttachmentsForEvent');
+	Route::get('downloadfile/{file}','PagesController@downloadfile');
 
 });
 
