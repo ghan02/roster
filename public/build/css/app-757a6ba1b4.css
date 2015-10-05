@@ -96,9 +96,17 @@ small {
 .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
   border: none; }
 
+table {
+  font-size: 14px; }
+
 label {
   margin-bottom: 10px;
   font-size: 14px; }
+
+.dropzone {
+  border: 0px;
+  background-color: transparent;
+  padding: 0px; }
 
 /* Profile container */
 .profile {
@@ -189,5 +197,8 @@ label {
 
 .manager {
   width: 40px; }
+
+.form-control[readonly] {
+  background-color: white; }
 
 /*# sourceMappingURL=app.css.map */

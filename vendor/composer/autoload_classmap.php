@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddMoreColumnsToEventTable' => $baseDir . '/database/migrations/2015_10_04_080137_AddMoreColumnsToEventTable.php',
+    'ChangeEventColumnTypes' => $baseDir . '/database/migrations/2015_10_04_224904_ChangeEventColumnTypes.php',
     'CreateAttachmentsEventsPivotTable' => $baseDir . '/database/migrations/2015_10_04_050450_CreateAttachmentsEventsPivotTable.php',
     'CreateAttachmentsTable' => $baseDir . '/database/migrations/2015_10_04_050232_CreateAttachmentsTable.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',

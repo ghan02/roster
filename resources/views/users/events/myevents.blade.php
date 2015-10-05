@@ -2,7 +2,7 @@
 
 @section('breadcrumbprofile')
 	<ol class="breadcrumb pull-right">
-	  <li><a href="#"><span class="lnr lnr-home"></span></a></li>
+	  <li><a href="{!!route('user.profile')!!}"><span class="lnr lnr-home"></span></a></li>
 	  <li><a href="#">{!!Auth::user()->name!!}'s profile</a></li>
 	  <li class="active">events</li>
 	</ol>
@@ -18,13 +18,14 @@
 			<img src="{!!asset('images/event.png')!!}" class="pageImage pull-right" style="margin-top: -30px;" alt="My Events">
 		</div>
 	</div>
-	<div class="row">
-		<a href="#" class="btn btn-primary btn-sm pull-right"><span class="lnr lnr-rocket"></span> Create an Event</a>
-	</div>
 
 	<div class="row">
+		<a href="{!!route('events.create')!!}" class="btn btn-primary btn-sm pull-right"><span class="lnr lnr-rocket"></span> Create an Event</a>
+	</div>
+
+	<div class="row" id="rosterevent">
 		<div style="margin-top: 70px;">
-			<table class="table table-striped table-hover">
+			<table class="table table-striped table-hover footable">
 				<thead>
 					<tr>
 						<td>Name</td>
@@ -35,22 +36,23 @@
 					</tr>
 				</thead>
 				<tbody>
-					@foreach(Auth::user()->events as $event)
-						<tr>
-							<td>{!!$event->title!!}</td>
-							<td>{!!$event->startdate!!}</td>
-							<td>{!!$event->enddate!!}</td>
-							<td>{!!$event->isauthorized!!}</td>
+					
+						<tr v-repeat="event:events">
+							
+							<td>@{{event.title}}</td>
+							<td>@{{event.startdate}}</td>
+							<td>@{{event.enddate}}</td>
+							<td>@{{event.isapproved}}</td>
 							
 
 							<td>
-								<button class="btn btn-sm btn-info"  data-toggle="modal" data-target="#moreInfo"><span class="lnr lnr-file-add"></span> More Info</button>
-								<button class="btn btn-sm btn-warning"><span class="lnr lnr-pencil"></span> Edit</button>
-								<button class="btn btn-sm btn-danger"><span class="lnr lnr-cross-circle"></span> Delete</button>
-								@include('users.events.partials._moreinfo',['event'=>$event])
+								<button class="btn btn-sm btn-info" v-on="click:this.showEventInfo(event)"><span class="lnr lnr-file-add"></span></button>
+								<button class="btn btn-sm btn-warning"><span class="lnr lnr-pencil"></span></button>
+								<button class="btn btn-sm btn-danger"><span class="lnr lnr-cross-circle"></span></button>
+								@include('users.events.partials._moreinfo')
 							</td>
 						</tr>
-					@endforeach
+					
 				</tbody>
 			</table>
 		</div>
@@ -73,5 +75,8 @@
 @stop
 
 @section('scripts')
-	
+	{!!Html::script('js/events.js')!!}
+	<script>
+		
+	</script>
 @stop

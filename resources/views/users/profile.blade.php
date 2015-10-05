@@ -2,7 +2,7 @@
 
 @section('breadcrumbprofile')
 	<ol class="breadcrumb pull-right">
-	  <li><a href="#"><span class="lnr lnr-home"></span></a></li>
+	  <li><a href="{!!route('user.profile')!!}"><span class="lnr lnr-home"></span></a></li>
 	  <li><a href="#">{!!Auth::user()->name!!}'s profile</a></li>
 	  <li class="active">profile home</li>
 	</ol>

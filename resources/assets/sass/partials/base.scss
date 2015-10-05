@@ -64,7 +64,17 @@ small {
     border: none;
 }
 
+table {
+  font-size:14px;
+}
+
 label {
   margin-bottom: 10px;
   font-size: 14px;
+}
+
+.dropzone {
+  border:0px;
+  background-color:transparent;
+  padding: 0px;
 }

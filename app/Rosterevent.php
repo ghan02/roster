@@ -11,6 +11,6 @@ class Rosterevent extends Model
 
     public function attachments()
     {
-    	return $this->hasMany(Attachment::class,'id');
+    	 return $this->belongsToMany('App\Attachment');
     }
 }

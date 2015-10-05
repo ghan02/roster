@@ -12,12 +12,12 @@ class CreateAttachmentsEventsPivotTable extends Migration
      */
     public function up()
     {   
-        Schema::create('attachmentsevents', function($table) {
+        Schema::create('attachment_rosterevent', function($table) {
             $table->increments('id');
-            $table->integer('attachments_id')->unsigned();
+            $table->integer('attachment_id')->unsigned();
             $table->integer('rosterevent_id')->unsigned();
 
-           $table->foreign('attachments_id')->references('id')->on('attachments');
+           $table->foreign('attachment_id')->references('id')->on('attachments');
            $table->foreign('rosterevent_id')->references('id')->on('events');
         });
     }
@@ -29,6 +29,6 @@ class CreateAttachmentsEventsPivotTable extends Migration
      */
     public function down()
     {
-        Schema::drop('attachmentsevents');
+        Schema::drop('attachment_rosterevent');
     }
 }

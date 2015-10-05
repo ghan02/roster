@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Rosterevent;
+use Auth;
 
 class RostereventController extends Controller
 {
@@ -25,7 +27,7 @@ class RostereventController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.events.create');
     }
 
     /**
@@ -36,7 +38,13 @@ class RostereventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        $event = new Rosterevent;
+        $event->fill($request->all());
+        $event->user_id = Auth::user()->id;
+        $event->isapproved = 0;
+        $event->save();
+        dd('request was saved');
     }
 
     /**
@@ -58,7 +66,8 @@ class RostereventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = Rosterevent::find($id);
+        return view('users.events.edit')->withEvent($event);
     }
 
     /**

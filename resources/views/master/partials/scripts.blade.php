@@ -4,6 +4,8 @@
 {!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.1.16/vue-resource.min.js')!!}
 {!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js')!!}
 {!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/vue-router/0.6.2/vue-router.min.js')!!}
+{!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.js')!!}
+{!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js')!!}
 
 <script>
 
