@@ -36,6 +36,7 @@
 		    	       right: 'month,agendaWeek,agendaDay'
 		    	   },
 				editable: true,
+				allDayDefault : true,
 				eventLimit: true, // allow "more" link when too many events
 		    	eventSources: [
 
