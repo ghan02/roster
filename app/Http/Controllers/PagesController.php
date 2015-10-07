@@ -53,7 +53,7 @@ class PagesController extends Controller
 
     public function rosterevents()
     {
-        $events = Rosterevent::latest()->select('id','title','startdate as start','enddate as end')->get();
+        $events = Rosterevent::latest()->select('id','title','startdate as start','enddate as end','color','textColor')->get();
         return response()->json($events);
     }
 
