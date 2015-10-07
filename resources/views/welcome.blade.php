@@ -15,7 +15,7 @@
     		<input type="text" class="form-control" v-model="title" v-on="keyup:this.searchForEvents()">
     		<ul style="margin-top: 10px;">
     			<li v-repeat="events" style="margin-bottom: 10px;">
-    				<span class="lnr lnr-rocket" style="font-size: 11px; margin-right: 4px;"></span><a href="#">@{{title}}</a>
+    				<span class="lnr lnr-rocket" style="font-size: 11px; margin-right: 4px;"></span><a href="users/event/@{{id}}">@{{title}}</a>
     				<div style="margin-top:10px;">
     					<ul>
     						<li style="margin-top: 6px;"><span class="label label-info">Created By : @{{name}}</span></li>
@@ -60,14 +60,8 @@
 
 		    	  ],
 		    	  eventClick: function(calEvent, jsEvent, view) {
-
-		    	         alert('Event: ' + calEvent.title);
-		    	         alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-		    	         alert('View: ' + view.name);
-
-		    	         // change the border color just for fun
-		    	         $(this).css('border-color', 'red');
-
+		    	  		console.log('eventid : ' + calEvent.id);
+		    	  		window.location.href ="users/event/"+calEvent.id;
 		    	     }
 		    });
 		})

@@ -30,4 +30,5 @@ $router->group(['middleware'=>'auth'], function($router) {
 Route::get('roster/events',['as'=>'roster.events','uses'=>'PagesController@rosterevents']);
 Route::get('search/events/{term}',['as'=>'events.search','uses'=>'PagesController@searchevents']);
 
-// user profile
+// show event info for all users 
+Route::get('users/event/{id}',['as'=>'events.show','uses'=>'PagesController@showEvent']);

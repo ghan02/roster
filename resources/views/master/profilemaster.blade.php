@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-	<div class="row profile">
+	<div class="row profile defaultContainer">
 			<div class="col-md-3">
 				<div class="profile-sidebar">
 					<!-- SIDEBAR USERPIC -->

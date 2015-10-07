@@ -72,4 +72,9 @@ class PagesController extends Controller
         return response()->json($events);
     }
 
+    public function showEvent($eventID)
+    {
+        $event = Rosterevent::find($eventID);
+        return view('events.show')->with('event',$event);
+    }
 }
