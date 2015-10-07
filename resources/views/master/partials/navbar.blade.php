@@ -8,7 +8,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Roster</a>
+      <a class="navbar-brand" href="{!!url('/')!!}" style="font-size: 28px; font-family: 'Lobster', cursive;">
+        <img src="{!!asset('images/roster.png')!!}" alt="" style="width:20px; display:inline;"> Roster
+      </a>
     </div>
     <div id="navbar" class="collapse navbar-collapse pull-right">
       <ul class="nav navbar-nav">

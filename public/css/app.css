@@ -108,6 +108,9 @@ label {
   background-color: transparent;
   padding: 0px; }
 
+h4 {
+  margin-bottom: 10px; }
+
 /* Profile container */
 .profile {
   margin: 20px 0; }

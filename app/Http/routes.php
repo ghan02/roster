@@ -25,7 +25,9 @@ $router->group(['middleware'=>'auth'], function($router) {
 	Route::resource('events','RostereventController');
 	Route::resource('getUserEvents','PagesController@getUserEvents');
 	Route::get('downloadfile/{file}','PagesController@downloadfile');
-
 });
+
+Route::get('roster/events',['as'=>'roster.events','uses'=>'PagesController@rosterevents']);
+Route::get('search/events/{term}',['as'=>'events.search','uses'=>'PagesController@searchevents']);
 
 // user profile

@@ -67,6 +67,9 @@ class RostereventController extends Controller
     public function edit($id)
     {
         $event = Rosterevent::find($id);
+        if($event->user_id != Auth::user()->id)
+            dd('this is not your event');
+        
         return view('users.events.edit')->withEvent($event);
     }
 
@@ -79,7 +82,19 @@ class RostereventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $event = Rosterevent::find($id);
+        
+        if($event->user_id != Auth::user()->id)
+            dd('this is not your event');
+
+        if($event->isapproved == 1)
+            dd('this cannot be updated , because your manager has already approved this request.');
+
+        $event->fill($request->all());
+        $event->user_id = Auth::user()->id;
+        $event->isapproved = 0;
+        $event->save();
+        dd('request was saved');
     }
 
     /**

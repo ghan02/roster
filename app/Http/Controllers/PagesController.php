@@ -51,5 +51,16 @@ class PagesController extends Controller
        return Response::download($file);
     }
 
+    public function rosterevents()
+    {
+        $events = Rosterevent::latest()->select('id','title','startdate as start','enddate as end')->get();
+        return response()->json($events);
+    }
+
+    public function searchevents($searchterm)
+    {
+        $events = Rosterevent::where('title', 'LIKE','%'.$searchterm.'%')->get();
+        return response()->json($events);
+    }
 
 }

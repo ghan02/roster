@@ -47,7 +47,7 @@
 
 							<td>
 								<button class="btn btn-sm btn-info" v-on="click:this.showEventInfo(event)"><span class="lnr lnr-file-add"></span></button>
-								<button class="btn btn-sm btn-warning"><span class="lnr lnr-pencil"></span></button>
+								<a href="/events/@{{event.id}}/edit" class="btn btn-sm btn-warning"><span class="lnr lnr-pencil"></span></a>
 								<button class="btn btn-sm btn-danger"><span class="lnr lnr-cross-circle"></span></button>
 								@include('users.events.partials._moreinfo')
 							</td>
