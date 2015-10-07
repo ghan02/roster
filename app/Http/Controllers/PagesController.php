@@ -9,6 +9,7 @@ use App\Rosterevent;
 use Auth;
 use Response;
 use Log;
+use DB;
 
 class PagesController extends Controller
 {
@@ -53,13 +54,21 @@ class PagesController extends Controller
 
     public function rosterevents()
     {
-        $events = Rosterevent::latest()->select('id','title','startdate as start','enddate as end','color','textColor')->get();
+        $events = DB::table('events')
+            ->join('users', 'user_id', '=', 'events.user_id')
+            ->select('events.id','events.title','events.startdate as start','events.enddate as end','events.color','events.textColor','users.name as name')
+            ->get();
+
         return response()->json($events);
     }
 
     public function searchevents($searchterm)
     {
-        $events = Rosterevent::where('title', 'LIKE','%'.$searchterm.'%')->get();
+        $events = DB::table('events')
+            ->join('users', 'user_id', '=', 'events.user_id')
+            ->select('events.id','events.title','events.startdate as start','events.enddate as end','events.color','events.textColor','users.name as name')
+            ->where('title','LIKE','%'.$searchterm.'%')
+            ->get();
         return response()->json($events);
     }
 

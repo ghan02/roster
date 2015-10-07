@@ -17,8 +17,11 @@
     			<li v-repeat="events" style="margin-bottom: 10px;">
     				<span class="lnr lnr-rocket" style="font-size: 11px; margin-right: 4px;"></span><a href="#">@{{title}}</a>
     				<div style="margin-top:10px;">
-    					<span class="label label-info">Start : @{{startdate}}</span>
-    					<span class="label label-info">End : @{{enddate}}</span>
+    					<ul>
+    						<li style="margin-top: 6px;"><span class="label label-info">Created By : @{{name}}</span></li>
+    						<li style="margin-top: 6px;"><span class="label label-info">Start : @{{start}}</span></li>
+    						<li style="margin-top: 6px;"><span class="label label-info">End : @{{end}}</span></li>
+    					</ul>
     				</div>
     				<hr>
     			</li>

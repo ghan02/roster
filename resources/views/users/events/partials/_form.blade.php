@@ -20,14 +20,14 @@
 	<div class="col-md-6">
 		<div class="form-group">
 			<label for="color">Color</label>
-			<small>background color of the event</small>
+			<small>[background color of the event]</small>
 			{!!Form::text('color',null,['class'=>'form-control'])!!}
 		</div>
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
 			<label for="color">Text Color</label>
-			<small>textcolor of the event</small>
+			<small>[textcolor of the event]</small>
 			{!!Form::text('textColor',null,['class'=>'form-control'])!!}
 		</div>
 	</div>
