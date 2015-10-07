@@ -13,24 +13,25 @@
 		<hr>
 		<div>
 			<ul class="list-inline">
-				<li><span class="badge badge-info">Start Date : {!!$event->startdate!!}</span></li>
-				<li><span class="badge badge-info">End Date : {!!$event->startdate!!}</span></li>
-				<li><span class="badge badge-info">Event Created on : {!!$event->created_at!!}</span></li>
-				<li><span class="badge badge-info">Event Updated on : {!!$event->updated_at!!}</span></li>
+				<li><small class="text-muted">Start Date : {!!$event->startdate!!}</small></li>
+				<li><small class="text-muted">End Date : {!!$event->startdate!!}</small></li>
+				<li><small class="text-muted">Event Created on : {!!$event->created_at!!}</small></li>
+				<li><small class="text-muted">Event Updated on : {!!$event->updated_at!!}</small></li>
 			</ul>
 		</div>
-		<div class="col-md-9" style="margin-top: 25px;">
+		<div class="row">
+			<div class="col-md-9" style="margin-top: 25px;">
 				<p style="font-size:15px">{!!$event->notes!!}</p>
+			</div>
+			<div class="col-md-3" style="margin-top: 25px;">
+				<strong>Attachments</strong>
+				<ol>
+					@foreach($event->attachments as $attachment)
+						<li><small><a href="#">{!!$attachment->filename!!}</a></small></li>
+					@endforeach
+				</ol>
+			</div>
 		</div>
-		<div class="col-md-3" style="margin-top: 25px;">
-			<strong>Attachments</strong>
-			<ol>
-				@foreach($event->attachments as $attachment)
-					<li><small><a href="#">{!!$attachment->filename!!}</a></small></li>
-				@endforeach
-			</ol>
-		</div>
-	
 	</div>
 	
 @stop
