@@ -21,7 +21,7 @@ Route::get('logout',['as'=>'user.logout','uses'=>'SessionsController@logout']);
 $router->group(['middleware'=>'auth'], function($router) {
 	Route::get('profile',['as'=>'user.profile','uses'=>'PagesController@profile']);
 	Route::get('profile/events',['as'=>'user.events','uses'=>'PagesController@myevents']);
-	Route::get('profile/settings',['as'=>'user.settings','uses'=>'PagesController@settings']);
+	Route::get('profile/password',['as'=>'user.password','uses'=>'PagesController@password']);
 	Route::resource('events','RostereventController');
 	Route::resource('getUserEvents','PagesController@getUserEvents');
 	Route::get('downloadfile/{file}','PagesController@downloadfile');

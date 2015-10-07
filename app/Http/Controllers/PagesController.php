@@ -30,9 +30,9 @@ class PagesController extends Controller
     {
         return view('users.events.myevents');
     }
-    public function settings()
+    public function password()
     {
-        return view('users.settings');
+        return view('users.password');
     }
 
     public function getUserEvents()
