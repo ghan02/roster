@@ -9,6 +9,7 @@
 <!-- calendar js -->
 {!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js')!!}
 {!!Html::script('//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.js')!!}
+{!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.0/js/bootstrap-colorpicker.min.js')!!}
 
 <script>
 
