@@ -8,7 +8,7 @@
     </div>
     <div class="col-md-3">
     	<div id="searchEvents">
-    		<h4>Search Events</h4>
+    		<h4><span class="lnr lnr-magnifier"></span> Search Events <small class="text-muted" style="display: block;margin-top: 4px;">enter some characters of the event title</small></h4>
     		<input type="text" class="form-control" v-model="title" v-on="keyup:this.searchForEvents()">
     		<ul style="margin-top: 10px;">
     			<li v-repeat="events" style="margin-bottom: 10px;">
