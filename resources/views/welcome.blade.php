@@ -5,6 +5,9 @@
     	<div id="calendar">
     	    <!-- calendar control will be displayed here -->
     	</div>
+    	<div style="margin-top: 5px;">
+    		<small class="text-muted"><span class="lnr lnr-bullhorn"> Click the event to know more about the event.</span></small>
+    	</div>
     </div>
     <div class="col-md-3">
     	<div id="searchEvents">
