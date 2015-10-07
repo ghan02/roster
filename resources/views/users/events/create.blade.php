@@ -33,6 +33,9 @@
 				clearBtn: true,
 				todayHighlight: true,
 			});
+
+			$('.colorpicker').colorpicker({format:'hex'});
+			
 		})
 	</script>
 @stop

@@ -36,7 +36,7 @@
 				clearBtn: true,
 				todayHighlight: true,
 			});
-			$('.colorpicker').colorpicker({ /*options...*/ });
+			$('.colorpicker').colorpicker({format:'hex'});
 		})
 	</script>
 @stop
