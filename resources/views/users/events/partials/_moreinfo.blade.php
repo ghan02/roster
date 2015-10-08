@@ -17,6 +17,10 @@
           <dd id="attachment">
           	<ul></ul>
           </dd>
+          <dt>Current links</dt>
+          <dd id="link">
+            <ul></ul>
+          </dd>
           <dt>Notes</dt>
           <dd><p id="notes"></p></dd>
           

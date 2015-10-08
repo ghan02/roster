@@ -12,6 +12,8 @@ return array(
     'ChangeEventColumnTypes' => $baseDir . '/database/migrations/2015_10_04_224904_ChangeEventColumnTypes.php',
     'CreateAttachmentsEventsPivotTable' => $baseDir . '/database/migrations/2015_10_04_050450_CreateAttachmentsEventsPivotTable.php',
     'CreateAttachmentsTable' => $baseDir . '/database/migrations/2015_10_04_050232_CreateAttachmentsTable.php',
+    'CreateLinksAttachmentTable' => $baseDir . '/database/migrations/2015_10_08_074943_CreateLinksAttachmentTable.php',
+    'CreateLinksTable' => $baseDir . '/database/migrations/2015_10_08_074353_CreateLinksTable.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateRostereventTable' => $baseDir . '/database/migrations/2015_10_04_043408_CreateRostereventTable.php',
     'CreateSettingsTable' => $baseDir . '/database/migrations/2015_10_03_040804_CreateSettingsTable.php',

@@ -13,4 +13,9 @@ class Rosterevent extends Model
     {
     	 return $this->belongsToMany('App\Attachment');
     }
+
+    public function links()
+    {
+    	 return $this->belongsToMany(Link::class);
+    }
 }

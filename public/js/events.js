@@ -28,7 +28,10 @@ new Vue({
                 for (var i = 0; i < event.attachments.length; i++) {
                 	modal.find('#attachment ul').append('<li> <a href="'+event.attachments[i].location+'" target="_blank">'+event.attachments[i].filename+'</a> </li>')
                 }
-                // modal.find('#attachment').text(event.attachments[0].filename);
+                modal.find('#link ul').empty();
+                for (var i = 0; i < event.links.length; i++) {
+                    modal.find('#link ul').append('<li> <a href="'+event.links[i].url+'" target="_blank">'+event.links[i].title+'</a> </li>')
+                }
             });
 
             $('#moreInfo').modal('show');

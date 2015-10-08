@@ -40,7 +40,7 @@ class PagesController extends Controller
     {
         if(Auth::check())
         {
-            return response()->json(['events' => Auth::user()->events()->with('Attachments')->get()]);
+            return response()->json(['events' => Auth::user()->events()->with('Attachments')->with('Links')->get()]);
         }
         else 
             return Response::json(array('events'=>''));

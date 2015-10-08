@@ -31,6 +31,13 @@
 						<li><small><a href="#">{!!$attachment->filename!!}</a></small></li>
 					@endforeach
 				</ol>
+				<hr>
+				<strong>Links</strong>
+				<ol>
+					@foreach($event->links as $link)
+						<li><small><a href="#">{!!$link->title!!}</a></small></li>
+					@endforeach
+				</ol>
 			</div>
 		</div>
 	</div>
