@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddColorColumnsToEventTable' => $baseDir . '/database/migrations/2015_10_07_070025_AddColorColumnsToEventTable.php',
+    'AddExtraColumnsToEventTable' => $baseDir . '/database/migrations/2015_10_07_200419_AddExtraColumnsToEventTable.php',
     'AddMoreColumnsToEventTable' => $baseDir . '/database/migrations/2015_10_04_080137_AddMoreColumnsToEventTable.php',
     'ChangeEventColumnTypes' => $baseDir . '/database/migrations/2015_10_04_224904_ChangeEventColumnTypes.php',
     'CreateAttachmentsEventsPivotTable' => $baseDir . '/database/migrations/2015_10_04_050450_CreateAttachmentsEventsPivotTable.php',

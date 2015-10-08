@@ -46,9 +46,10 @@
 							
 
 							<td>
-								<button class="btn btn-sm btn-info" v-on="click:this.showEventInfo(event)"><span class="lnr lnr-file-add"></span></button>
-								<a href="/events/@{{event.id}}/edit" class="btn btn-sm btn-warning"><span class="lnr lnr-pencil"></span></a>
-								<button class="btn btn-sm btn-danger"><span class="lnr lnr-cross-circle"></span></button>
+								<button class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" title="Send to your manager" ><span class="lnr lnr-arrow-right-circle"></span></button>
+								<button class="btn btn-sm btn-info" v-on="click:this.showEventInfo(event)" data-toggle="tooltip" title="More Information" ><span class="lnr lnr-file-add"></span></button>
+								<a href="/events/@{{event.id}}/edit" data-toggle="tooltip" title="Edit this event" class="btn btn-sm btn-warning"><span class="lnr lnr-pencil"></span></a>
+								<button class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete this event" ><span class="lnr lnr-cross-circle"></span></button>
 								@include('users.events.partials._moreinfo')
 							</td>
 						</tr>
@@ -70,13 +71,12 @@
 
 		</div>	
 	</div>
-	
-
 @stop
 
 @section('scripts')
 	{!!Html::script('js/events.js')!!}
 	<script>
+
 		
 	</script>
 @stop

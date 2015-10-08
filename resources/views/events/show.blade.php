@@ -3,7 +3,8 @@
 @section('breadcrumb')
 	<ol class="breadcrumb">
 	  <li><a href="{!!url('/')!!}"><span class="lnr lnr-home"></span></a></li>
-	  <li class="active">event show</li>
+	  <li class="active">event show </li>
+	  <li class="active"><a href="{!!url('/')!!}"><span class="lnr lnr-undo"></span></a></li>
 	</ol>
 @stop
 

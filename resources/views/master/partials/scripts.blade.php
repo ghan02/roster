@@ -16,6 +16,8 @@
 
 	(function () {
 	  'use strict';
+	  
+		$("body").tooltip({ selector: '[data-toggle=tooltip]' });
 
 	  toastr.options = {
 	    "closeButton": true,
@@ -54,7 +56,10 @@
 	    document.querySelector('head').appendChild(msViewportStyle)
 	  }
 
+
+
 	})();
+
 </script>
 
 @yield('scripts');

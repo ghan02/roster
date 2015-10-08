@@ -13,8 +13,9 @@
     	<div id="searchEvents">
     		<h4><span class="lnr lnr-magnifier"></span> Search Events <small class="text-muted" style="display: block;margin-top: 4px;">enter some characters of the event title</small></h4>
     		<input type="text" class="form-control" v-model="title" v-on="keyup:this.searchForEvents()">
-    		<small><input type="checkbox"> Show my events</small>
-    		<ul style="margin-top: 10px;">
+    		<small><input type="checkbox" v-model="searchMyEvents"> search my events</small>
+    		<hr>
+    		<ul style="margin-top: 10px; overflow: auto; height: 500px;">
     			<li v-repeat="events" style="margin-bottom: 10px;">
     				<span class="lnr lnr-rocket" style="font-size: 11px; margin-right: 4px;"></span><a href="users/event/@{{id}}">@{{title}}</a>
     				<div style="margin-top:10px;">

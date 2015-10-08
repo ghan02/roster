@@ -2,6 +2,7 @@ new Vue({
 	el: '#searchEvents',
 	data : {
 		title : '', 
+		searchMyEvents : false,
 		events:[]
 	},
 	ready: function() {
@@ -9,8 +10,14 @@ new Vue({
 	},
 	methods : {
 		searchForEvents : function() {
+
 			if(this.title) {
-				this.$http.get('search/events/'+this.title).success(function(response) {
+				this.$http.get('search/events/'+this.title+'/'+this.searchMyEvents).success(function(response) {
+					if(response.type=='error')
+					{
+						toastr.error(response.message);
+						return;
+					}
 				    this.$set('events', response);
 				});
 			}

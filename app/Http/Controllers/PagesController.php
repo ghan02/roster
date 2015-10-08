@@ -62,13 +62,30 @@ class PagesController extends Controller
         return response()->json($events);
     }
 
-    public function searchevents($searchterm)
+    public function searchevents($searchterm,$myevents)
     {
-        $events = DB::table('events')
-            ->join('users', 'user_id', '=', 'events.user_id')
-            ->select('events.id','events.title','events.startdate as start','events.enddate as end','events.color','events.textColor','users.name as name')
-            ->where('title','LIKE','%'.$searchterm.'%')
-            ->get();
+
+        if($myevents == true)
+        {
+            if(!Auth::check())
+            {
+                return Response::json(array('message' => 'You must be logged in to search for your events!','type'=>'error' ));
+            }
+            $events = DB::table('events')
+                ->join('users', 'user_id', '=', 'events.user_id')
+                ->select('events.id','events.title','events.startdate as start','events.enddate as end','events.color','events.textColor','users.name as name')
+                ->where('title','LIKE','%'.$searchterm.'%')
+                ->where('events.user_id','=',Auth::user()->id)
+                ->get();
+        }
+        else
+        {
+            $events = DB::table('events')
+                    ->join('users', 'user_id', '=', 'events.user_id')
+                    ->select('events.id','events.title','events.startdate as start','events.enddate as end','events.color','events.textColor','users.name as name')
+                    ->where('title','LIKE','%'.$searchterm.'%')
+                    ->get();
+        }
         return response()->json($events);
     }
 

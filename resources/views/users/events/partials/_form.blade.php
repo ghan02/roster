@@ -16,6 +16,11 @@
 	{!!Form::textarea('notes',null,['class'=>'form-control'])!!}
 </div>
 
+<div class="form-group">
+	{!!Form::checkbox('isalldayevent')!!}
+	<label for="isalldayevent">This event is an "all day event"</label>
+</div>
+
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group">
