@@ -65,7 +65,7 @@ class PagesController extends Controller
     public function searchevents($searchterm,$myevents)
     {
 
-        if($myevents == true)
+        if($myevents == 'true')
         {
             if(!Auth::check())
             {
