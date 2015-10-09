@@ -11,6 +11,7 @@ class Rosterevent extends Model
 
     protected $casts = [
         'isalldayevent' => 'integer',
+        'isforwarded' => 'integer',
         'isapproved' => 'boolean'
     ];
 

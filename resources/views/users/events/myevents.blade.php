@@ -50,8 +50,10 @@
 			    		<tbody>
 			    			
 			    				<tr v-repeat="event:events">
-			    					<td v-if="event.isalldayevent"><span class="lnr lnr-history" data-toggle="tooltip" title="This is a full day event"></span></td>
-			    					<td v-if="!event.isalldayevent"></td>
+			    					<td >
+			    						<span class="lnr lnr-history btn btn-sm btn-default" v-if="event.isalldayevent" data-toggle="tooltip" title="This is a full day event"></span>
+			    						<span class="lnr lnr-thumbs-up btn btn-sm btn-default" v-if="event.isforwarded" data-toggle='tooltip' title="This event has been forwarded to your manager."></span>
+			    					</td>
 			    					<td>@{{event.title}}</td>
 			    					<td>@{{event.startdate}}</td>
 			    					<td>@{{event.enddate}}</td>
@@ -59,7 +61,7 @@
 			    					
 
 			    					<td>
-			    						<button class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" title="Send to your manager" ><span class="lnr lnr-arrow-right-circle"></span></button>
+			    						<button class="btn btn-sm btn-default" v-if="!event.isforwarded" data-toggle="tooltip" data-placement="top" title="Send to your manager" ><span class="lnr lnr-arrow-right-circle"></span></button>
 			    						<button class="btn btn-sm btn-info" v-on="click:this.showEventInfo(event)" data-toggle="tooltip" title="More Information" ><span class="lnr lnr-file-add"></span></button>
 			    						<a href="/events/@{{event.id}}/edit" data-toggle="tooltip" title="Edit this event" class="btn btn-sm btn-warning"><span class="lnr lnr-pencil"></span></a>
 			    						<button class="btn btn-sm btn-danger" data-toggle="tooltip" title="Delete this event" ><span class="lnr lnr-cross-circle"></span></button>
@@ -100,6 +102,16 @@
 
 			</div>
 
+		</div>
+	</div>
+	
+	<div class="row">
+		<p class="text text-danger" style="margin-bottom: 10px;">Legend:</p>
+		<div>
+			<ul>
+				<li><small><span class="lnr lnr-history"></span> : Items marked with this are full day events.</small></li>
+				<li><small><span class="lnr lnr-thumbs-up"></span> : Items marked with this have already been forwarded to your manager.</small></li>
+			</ul>
 		</div>
 	</div>
 
