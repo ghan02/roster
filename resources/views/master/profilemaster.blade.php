@@ -34,6 +34,10 @@
             				{!!HTML::navlink('user.profile', '<span class="lnr lnr-home"></span> Home')!!}
             				{!!HTML::navlink('user.events', '<span class="lnr lnr-rocket"></span> Events')!!}
             				{!!HTML::navlink('user.password', '<span class="lnr lnr-lock"></span> Password')!!}
+            				@can('administer')
+            					{!!HTML::navlink('user.password', '<span class="lnr lnr-lock"></span> Create Users')!!}
+
+            				@endcan
 						</ul>
 					</div>
 					<!-- END MENU -->

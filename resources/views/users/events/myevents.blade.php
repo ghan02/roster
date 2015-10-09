@@ -104,7 +104,7 @@
 
 		</div>
 	</div>
-	
+	<hr>
 	<div class="row">
 		<p class="text text-danger" style="margin-bottom: 10px;">Legend:</p>
 		<div>
