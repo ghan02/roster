@@ -40,10 +40,21 @@ class PagesController extends Controller
     {
         if(Auth::check())
         {
-            return response()->json(['events' => Auth::user()->events()->with('Attachments')->with('Links')->get()]);
+            return response()->json(['events' => Auth::user()->events()->where('isapproved',0)->with('Attachments')->with('Links')->get()]);
         }
         else 
             return Response::json(array('events'=>''));
+    }
+
+    public function getApprovedUserEvents()
+    {
+        if(Auth::check())
+        {
+            return response()->json(['events' => Auth::user()->events()->where('isapproved',1)->with('Attachments')->with('Links')->get()]);
+        }
+        else 
+            return Response::json(array('events' =>''));
+
     }
 
     public function downloadfile($file)

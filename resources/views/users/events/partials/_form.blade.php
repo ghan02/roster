@@ -12,13 +12,29 @@
 </div>
 
 <div class="form-group">
+	<label for="notes">Event Type</label>
+	{!!Form::select('eventtype_id',$eventtypes,null,['class'=>'form-control'])!!}
+</div>
+
+<div class="form-group">
 	<label for="notes">Notes</label>
 	{!!Form::textarea('notes',null,['class'=>'form-control'])!!}
 </div>
 
-<div class="form-group">
-	{!!Form::checkbox('isalldayevent')!!}
-	<label for="isalldayevent">This event is an "all day event"</label>
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			{!!Form::checkbox('isalldayevent')!!}
+			<label for="isalldayevent">This event is an "all day event"</label>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="form-group">
+			{!!Form::checkbox('isalldayevent')!!}
+			<label for="notes">Anybody in the event can edit this event</label>
+			<span class="lnr lnr-question-circle" data-toggle="tooltip" title="If you would like your team members to edit this event go ahead and check this box. You would normally do this whenever you are creating a team event."></span>
+		</div>
+	</div>
 </div>
 
 <div class="row">

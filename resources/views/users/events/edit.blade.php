@@ -22,7 +22,7 @@
 	<div class="row">
 		
 		{!! Form::model($event, array('method' => 'PATCH','role'=>'form', 'id'=>'my-awesome-dropzone','class'=>'dropzone','route' => array('events.update', $event->id))) !!}
-			@include('users.events.partials._form',['type'=>'edit','event'=>$event])
+			@include('users.events.partials._form',['type'=>'edit','event'=>$event,'eventtypes'=>$eventtypes])
 		{!!Form::close()!!}
 	</div>
 

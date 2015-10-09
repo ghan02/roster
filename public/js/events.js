@@ -2,17 +2,23 @@ new Vue({
     el: '#rosterevent',
     data: {
         events: [],
-        attachments: []
+        attachments: [],
+        approvedRequests: []
     },
     ready: (function() {
         console.log('loading events for the user');
         this.getEvents();
-        
+        this.getApprovedRequests();
     }),
     methods: {
         getEvents: function() {
             this.$http.get('/getUserEvents').success(function(response) {
                 this.$set('events', response.events);
+            });
+        },
+        getApprovedRequests: function() {
+            this.$http.get('/getApprovedUserEvents').success(function(response) {
+                this.$set('approvedRequests', response.events);
             });
         },
         showEventInfo: function(event) {

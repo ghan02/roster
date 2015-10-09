@@ -20,7 +20,7 @@
 	</div>
 	<div class="row">
 		{!!Form::open(array('route'=>'events.store','id'=>'formMachine'))!!}
-			@include('users.events.partials._form',['type'=>'create'])
+			@include('users.events.partials._form',['type'=>'create','eventtypes'=>$eventtypes])
 		{!!Form::close()!!}
 	</div>
 @stop

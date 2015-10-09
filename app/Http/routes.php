@@ -23,7 +23,8 @@ $router->group(['middleware'=>'auth'], function($router) {
 	Route::get('profile/events',['as'=>'user.events','uses'=>'PagesController@myevents']);
 	Route::get('profile/password',['as'=>'user.password','uses'=>'PagesController@password']);
 	Route::resource('events','RostereventController');
-	Route::resource('getUserEvents','PagesController@getUserEvents');
+	Route::get('getUserEvents','PagesController@getUserEvents');
+	Route::get('getApprovedUserEvents','PagesController@getApprovedUserEvents');
 	Route::get('downloadfile/{file}','PagesController@downloadfile');
 });
 

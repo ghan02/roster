@@ -7,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Rosterevent extends Model
 {
     protected $table = 'events';
-    protected $fillable = ['title','notes','isapproved','startdate','enddate','user_id','color','textColor','isalldayevent','isforwarded'];
+    protected $fillable = ['title','notes','isapproved','startdate','enddate','user_id','color','textColor','isalldayevent','isforwarded','eventtype_id'];
+
+    protected $casts = [
+        'isalldayevent' => 'integer',
+        'isapproved' => 'boolean'
+    ];
 
     public function attachments()
     {

@@ -7,6 +7,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Rosterevent;
 use Auth;
+use App\Eventtype;
+use Response;
 
 class RostereventController extends Controller
 {
@@ -27,7 +29,8 @@ class RostereventController extends Controller
      */
     public function create()
     {
-        return view('users.events.create');
+        $eventtypes = Eventtype::lists('title','id');
+        return view('users.events.create')->with('eventtypes',$eventtypes);
     }
 
     /**
@@ -67,10 +70,15 @@ class RostereventController extends Controller
     public function edit($id)
     {
         $event = Rosterevent::find($id);
+        if($event->isapproved)
+            return Response::json(array('message' => 'You cannot edit this record because this has been approved','type'=>'error' ));
+
+
         if($event->user_id != Auth::user()->id)
             dd('this is not your event');
+        $eventtypes = Eventtype::lists('title','id');
         
-        return view('users.events.edit')->withEvent($event);
+        return view('users.events.edit')->withEvent($event)->with('eventtypes',$eventtypes);
     }
 
     /**
