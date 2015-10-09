@@ -69,6 +69,7 @@ class RostereventController extends Controller
      */
     public function edit($id)
     {
+
         $event = Rosterevent::find($id);
         if($event->isapproved)
             return Response::json(array('message' => 'You cannot edit this record because this has been approved','type'=>'error' ));
@@ -90,6 +91,7 @@ class RostereventController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $event = Rosterevent::find($id);
         
         if($event->user_id != Auth::user()->id)
@@ -98,9 +100,14 @@ class RostereventController extends Controller
         if($event->isapproved == 1)
             dd('this cannot be updated , because your manager has already approved this request.');
 
+
         $event->fill($request->all());
         $event->user_id = Auth::user()->id;
         $event->isapproved = 0;
+        if($request->has('isalldayevent'))
+            $event->isalldayevent = 1 ;
+        else 
+            $event->isalldayevent = 0;
         $event->save();
         dd('request was saved');
     }
