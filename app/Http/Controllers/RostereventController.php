@@ -46,6 +46,10 @@ class RostereventController extends Controller
         $event->fill($request->all());
         $event->user_id = Auth::user()->id;
         $event->isapproved = 0;
+        if($request->has('isalldayevent'))
+            $event->isalldayevent = 1 ;
+        else 
+            $event->isalldayevent = 0;
         $event->save();
         dd('request was saved');
     }
