@@ -24,4 +24,9 @@ class Rosterevent extends Model
     {
     	 return $this->belongsToMany(Link::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

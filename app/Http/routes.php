@@ -26,6 +26,12 @@ $router->group(['middleware'=>'auth'], function($router) {
 	Route::get('getUserEvents','PagesController@getUserEvents');
 	Route::get('getApprovedUserEvents','PagesController@getApprovedUserEvents');
 	Route::get('downloadfile/{file}','PagesController@downloadfile');
+
+});
+
+$router->group(['middleware'=>'admin'], function($router){
+		Route::resource('projects','ProjectController');
+
 });
 
 Route::get('roster/events',['as'=>'roster.events','uses'=>'PagesController@rosterevents']);

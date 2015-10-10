@@ -10,7 +10,7 @@
 
 @section('content')
 	<div class="defaultContainer">
-		<h4>{!!$event->title!!}</h4>
+		<h4>{!!$event->title!!} <small class="label label-info">{!!$event->user->name!!}</small></h4>
 		<hr>
 		<div>
 			<ul class="list-inline">

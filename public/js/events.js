@@ -14,6 +14,7 @@ new Vue({
         getEvents: function() {
             this.$http.get('/getUserEvents').success(function(response) {
                 this.$set('events', response.events);
+                
             });
         },
         getApprovedRequests: function() {

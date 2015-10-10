@@ -19,6 +19,7 @@ return array(
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePermissionRolesTable' => $baseDir . '/database/migrations/2015_10_09_053652_CreatePermissionRolesTable.php',
     'CreatePermissionsTable' => $baseDir . '/database/migrations/2015_10_09_053219_CreatePermissionsTable.php',
+    'CreateProjectsTable' => $baseDir . '/database/migrations/2015_10_10_041935_CreateProjectsTable.php',
     'CreateRolesTable' => $baseDir . '/database/migrations/2015_10_09_052612_CreateRolesTable.php',
     'CreateRolesUserTable' => $baseDir . '/database/migrations/2015_10_09_054438_CreateRolesUserTable.php',
     'CreateRostereventTable' => $baseDir . '/database/migrations/2015_10_04_043408_CreateRostereventTable.php',

@@ -35,8 +35,8 @@
             				{!!HTML::navlink('user.events', '<span class="lnr lnr-rocket"></span> Events')!!}
             				{!!HTML::navlink('user.password', '<span class="lnr lnr-lock"></span> Password')!!}
             				@can('administer')
-            					{!!HTML::navlink('user.password', '<span class="lnr lnr-users"></span> Create Users')!!}
-            					{!!HTML::navlink('user.password', '<span class="lnr lnr-tag"></span> Create Projects')!!}
+            					{!!HTML::navlink('projects.index', '<span class="lnr lnr-tag"></span> Create Projects')!!}
+            					{!!HTML::navlink('user.password', '<span class="lnr lnr-users"></span> Create User')!!}
 								
             				@endcan
             				@can('roster_manager')

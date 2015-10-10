@@ -67,7 +67,7 @@ class PagesController extends Controller
     {
         $events = DB::table('events')
             ->join('users', 'user_id', '=', 'events.user_id')
-            ->select('events.id','events.title','events.startdate as start','events.enddate as end','events.color','events.textColor','users.name as name')
+            ->select('events.id','events.title','events.startdate as start','events.enddate as end','events.color','events.textColor')->distinct()
             ->get();
 
         return response()->json($events);
