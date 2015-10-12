@@ -17,7 +17,7 @@
     		<hr>
     		<ul style="margin-top: 10px; overflow: auto; height: 500px;">
     			<li v-repeat="events" style="margin-bottom: 10px;">
-    				<span class="lnr lnr-rocket" style="font-size: 11px; margin-right: 4px;"></span><a href="users/event/@{{id}}">@{{title}}</a>
+    				<span class="lnr lnr-rocket" style="font-size: 11px; margin-right: 4px;"></span><a href="roster/users/event/@{{id}}">@{{title}}</a>
     				<div style="margin-top:10px;">
     					<ul>
     						<li style="margin-top: 6px;"><span class="label label-info">Created By : @{{name}}</span></li>
@@ -63,7 +63,7 @@
 		    	  ],
 		    	  eventClick: function(calEvent, jsEvent, view) {
 		    	  		console.log('eventid : ' + calEvent.id);
-		    	  		window.location.href ="users/event/"+calEvent.id;
+		    	  		window.location.href ="roster/users/event/"+calEvent.id;
 		    	     }
 		    });
 		})
