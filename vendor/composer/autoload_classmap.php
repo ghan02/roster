@@ -9,6 +9,7 @@ return array(
     'AddColorColumnsToEventTable' => $baseDir . '/database/migrations/2015_10_07_070025_AddColorColumnsToEventTable.php',
     'AddEventTypeColumnToEvents' => $baseDir . '/database/migrations/2015_10_08_090551_AddEventTypeColumnToEvents.php',
     'AddExtraColumnsToEventTable' => $baseDir . '/database/migrations/2015_10_07_200419_AddExtraColumnsToEventTable.php',
+    'AddIsTeamEventColumnTable' => $baseDir . '/database/migrations/2015_10_12_074135_AddIsTeamEventColumnTable.php',
     'AddMoreColumnsToEventTable' => $baseDir . '/database/migrations/2015_10_04_080137_AddMoreColumnsToEventTable.php',
     'AddMoreColumnsToUsers' => $baseDir . '/database/migrations/2015_10_11_003924_AddMoreColumnsToUsers.php',
     'ChangeEventColumnTypes' => $baseDir . '/database/migrations/2015_10_04_224904_ChangeEventColumnTypes.php',

@@ -30,8 +30,8 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
-			{!!Form::checkbox('isalldayevent')!!}
-			<label for="notes">Anybody in the event can edit this event</label>
+			{!!Form::checkbox('isteamevent')!!}
+			<label for="notes"> This is a team event</label>
 			<span class="lnr lnr-question-circle" data-toggle="tooltip" title="If you would like your team members to edit this event go ahead and check this box. You would normally do this whenever you are creating a team event."></span>
 		</div>
 	</div>

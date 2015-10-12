@@ -50,6 +50,12 @@ class RostereventController extends Controller
             $event->isalldayevent = 1 ;
         else 
             $event->isalldayevent = 0;
+
+        if($request->has('isteamevent'))
+            $event->isteamevent = 1 ;
+        else 
+            $event->isteamevent = 0;
+
         $event->save();
         dd('request was saved');
     }
@@ -112,6 +118,11 @@ class RostereventController extends Controller
             $event->isalldayevent = 1 ;
         else 
             $event->isalldayevent = 0;
+
+        if($request->has('isteamevent'))
+            $event->isteamevent = 1 ;
+        else 
+            $event->isteamevent = 0;
         $event->save();
         dd('request was saved');
     }

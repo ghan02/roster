@@ -45,6 +45,7 @@
 			    					<td >
 			    						<span class="lnr lnr-history btn btn-sm btn-default" v-if="event.isalldayevent" data-toggle="tooltip" title="This is a full day event"></span>
 			    						<span class="lnr lnr-thumbs-up btn btn-sm btn-default" v-if="event.isforwarded" data-toggle='tooltip' title="This event has been forwarded to your manager."></span>
+			    						<span class="lnr lnr-users btn btn-sm btn-default" v-if="event.isteamevent" data-toggle='tooltip' title="This event is a team event"></span>
 			    					</td>
 			    					<td>@{{event.title}}</td>
 			    					<td>@{{event.startdate}}</td>
@@ -103,6 +104,7 @@
 			<ul>
 				<li><small><span class="lnr lnr-history"></span> : Items marked with this are full day events.</small></li>
 				<li><small><span class="lnr lnr-thumbs-up"></span> : Items marked with this have already been forwarded to your manager.</small></li>
+				<li><small><span class="lnr lnr-users"></span> : Items marked with this are team events.</small></li>
 			</ul>
 		</div>
 	</div>

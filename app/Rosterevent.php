@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Rosterevent extends Model
 {
     protected $table = 'events';
-    protected $fillable = ['title','notes','isapproved','startdate','enddate','user_id','color','textColor','isalldayevent','isforwarded','eventtype_id'];
+    protected $fillable = ['title','notes','isapproved','startdate','enddate','user_id','color','textColor','isalldayevent','isforwarded','eventtype_id','isteamevent'];
 
     protected $casts = [
         'isalldayevent' => 'integer',
