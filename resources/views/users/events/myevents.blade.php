@@ -10,21 +10,13 @@
 
 @section('profileContent')
 
-	<div class="row">
-		<div class="well" style="overflow: hidden; line-height: 170%;">
-			<h4>Events</h4>
-			
-			<small class="text-muted">Use this page to manage your events.</small>
-			<img src="{!!asset('images/event.png')!!}" class="pageImage pull-right" style="margin-top: -30px;" alt="My Events">
-		</div>
-	</div>
 
 	<div class="row">
 		<a href="{!!route('events.create')!!}" class="btn btn-primary btn-sm pull-right"><span class="lnr lnr-rocket"></span> Create an Event</a>
 	</div>
 
 	<div class="row" id="rosterevent">
-		<div style="margin-top: 70px;">
+		<div style="margin-top: 20px;">
 			<div>
 
 			  <!-- Nav tabs -->

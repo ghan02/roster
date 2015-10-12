@@ -30,12 +30,18 @@ $router->group(['middleware'=>'auth'], function($router) {
 });
 
 $router->group(['middleware'=>'admin'], function($router){
-		Route::resource('projects','ProjectController');
+	Route::resource('teams','TeamController');
+	Route::get('getTeams','PagesController@getTeams');
 
+});
+
+$router->group(['middleware'=>'rostermanager'], function($router){
+	Route::resource('users','UserController');
+	Route::get('getUsers','PagesController@getUsers');
 });
 
 Route::get('roster/events',['as'=>'roster.events','uses'=>'PagesController@rosterevents']);
 Route::get('search/events/{term}/{myevents?}',['as'=>'events.search','uses'=>'PagesController@searchevents']);
 
 // show event info for all users 
-Route::get('users/event/{id}',['as'=>'events.show','uses'=>'PagesController@showEvent']);
+Route::get('roster/users/event/{id}',['as'=>'events.show','uses'=>'PagesController@showEvent']);

@@ -10,6 +10,8 @@ use Auth;
 use Response;
 use Log;
 use DB;
+use App\Team;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -104,5 +106,16 @@ class PagesController extends Controller
     {
         $event = Rosterevent::find($eventID);
         return view('events.show')->with('event',$event);
+    }
+
+    public function getTeams()
+    {
+        $teams = Team::latest()->with('users')->get();
+        return response()->json(['teams'=>$teams]);
+    }
+    public function getUsers()
+    {
+        $users = User::latest()->with('teams')->get();
+        return response()->json(['users'=>$users]);
     }
 }

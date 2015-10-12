@@ -14,7 +14,7 @@
 			<h4>Profile Home</h4>
 			
 			<small class="text-muted">Your account information</small>
-			<img src="{!!asset('images/team.png')!!}" class="pageImage pull-right" style="margin-top: -30px;" alt="My Team">
+			<img src="{!!asset('images/home.png')!!}" class="pageImage pull-right" style="margin-top: -30px;" alt="My Team">
 		</div>
 	</div>
 	

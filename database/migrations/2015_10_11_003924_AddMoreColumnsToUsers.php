@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectsTable extends Migration
+class AddMoreColumnsToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,9 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function($table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->longtext('notes');
-            $table->timestamps();
-        
+        Schema::table('users', function($table) {
+            $table->longtext('notes')->nullable();
+            $table->string('username');
         });
     }
 
@@ -28,6 +25,6 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('teams');
+        Schema::drop(['notes','username']);
     }
 }

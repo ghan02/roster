@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Team;
 
-class ProjectController extends Controller
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        return view('teams.index');
     }
 
     /**
@@ -25,7 +26,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('teams.create');
     }
 
     /**
@@ -36,7 +37,11 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $team = new Team;
+        $team->fill($request->all());
+        $team->save();
+
+        dd('team is saved');
     }
 
     /**
@@ -58,7 +63,8 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $team = Team::find($id);
+        return view('teams.edit')->with('team',$team);
     }
 
     /**
@@ -70,7 +76,11 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $team = Team::find($id);
+        $team->fill($request->all());
+
+        $team->save();
+        dd('Team has been updated');
     }
 
     /**

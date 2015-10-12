@@ -9,14 +9,7 @@
 @stop
 
 @section('profileContent')
-	<div class="row">
-		<div class="well" style="overflow: hidden; line-height: 170%;">
-			<h4>Account password</h4>
-			
-			<small class="text-muted">Your password</small>
-			<img src="{!!asset('images/team.png')!!}" class="pageImage pull-right" style="margin-top: -30px;" alt="My Team">
-		</div>
-	</div>
+
 	<div class="row">
 		<form>
 			<div class="form-group">
