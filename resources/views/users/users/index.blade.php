@@ -41,7 +41,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<h4>Teams <span>[@{{currentUser}}]</span> is subscribed to</h4>
+				<h4>Teams <span class="text-primary">@{{currentUser}}</span> is subscribed to</h4>
 				<ul>
 					<li v-repeat="teams"><a href="#" class="label label-info">@{{title}}</a></li>
 				</ul>
