@@ -27,7 +27,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-repeat="user:users"  v-on="mouseover: this.getTeams(user)">
+					<tr v-repeat="user:users"  v-on="mouseover: this.getTeams(user)" >
 						<td>@{{user.name}}</td>
 						<td>@{{user.name}}</td>
 						<td>@{{user.email}}</td>
@@ -41,7 +41,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<h4>Teams <span class="text-primary">@{{currentUser}}</span> is subscribed to</h4>
+				<h4 v-show="currentUser"><small>User <span class="text-primary">@{{currentUser}}</span> is subscribed to the following teams:</small></h4>
 				<ul>
 					<li v-repeat="teams"><a href="#" class="label label-info">@{{title}}</a></li>
 				</ul>

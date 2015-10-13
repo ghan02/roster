@@ -39,7 +39,7 @@
 		</div>
 		<hr>
 		<div class="row">
-			<h4>Team Members <span class="label label-default">@{{currentTeam}}</span></h4>
+			<h4 v-show="currentTeam">Team Members <span class="label label-default">@{{currentTeam}}</span></h4>
 			<div class="col-xs-12 col-sm-4 col-md-4" v-repeat="users">
 			           <div class="well well-sm" style="margin-top: 6px;">
 			               <div class="row">

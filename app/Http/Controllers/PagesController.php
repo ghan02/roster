@@ -85,25 +85,25 @@ class PagesController extends Controller
                 return Response::json(array('message' => 'You must be logged in to search for your events!','type'=>'error' ));
             }
             $events = DB::table('events')
-                ->join('users', 'user_id', '=', 'events.user_id')
+                ->join('users', 'events.user_id', '=', 'users.id')
                 ->select('events.id','events.title','events.startdate as start','events.enddate as end','events.color','events.textColor','users.name as name')
                 ->where('title','LIKE','%'.$searchterm.'%')
-                ->where('events.user_id','=',Auth::user()->id)
+                ->where('events.user_id','=',Auth::user()->id)->distinct()
                 ->get();
         }
         else
         {
             $events = DB::table('events')
-                    ->join('users', 'user_id', '=', 'events.user_id')
+                    ->join('users', 'events.user_id', '=', 'users.id')
                     ->select('events.id','events.title','events.startdate as start','events.enddate as end','events.color','events.textColor','users.name as name')
-                    ->where('title','LIKE','%'.$searchterm.'%')
+                    ->where('title','LIKE','%'.$searchterm.'%')->distinct()
                     ->get();
         }
         return response()->json($events);
     }
 
     public function showEvent($eventID)
-    {
+    {   
         $event = Rosterevent::find($eventID);
         return view('events.show')->with('event',$event);
     }

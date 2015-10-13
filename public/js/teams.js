@@ -19,6 +19,7 @@ new Vue({
 			this.$set('currentTeam',team.title);
 			
 			console.log(team.title);
+
 		}
 	}
 });
