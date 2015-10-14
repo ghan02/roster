@@ -115,7 +115,7 @@ class PagesController extends Controller
     }
     public function getUsers()
     {
-        $users = User::latest()->with('teams')->get();
+        $users = User::latest()->with(['teams','roles'])->get();
         return response()->json(['users'=>$users]);
     }
 }

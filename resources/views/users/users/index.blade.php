@@ -41,10 +41,13 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<h4 v-show="currentUser"><small>User <span class="text-primary">@{{currentUser}}</span> is subscribed to the following teams:</small></h4>
-				<ul>
-					<li v-repeat="teams"><a href="#" class="label label-info">@{{title}}</a></li>
-				</ul>
+				<div class="well" v-show="currentUser">
+					<h4><small>User <span class="text-primary">@{{currentUser}}</span> is subscribed to the following teams:</small></h4>
+					<ul>
+						<li v-repeat="teams"><a href="#" class="label label-info">@{{title}}</a></li>
+					</ul>
+					<p style="margin-top: 20px;"><small>Role : <span class="text text-danger">@{{role}}</span></small></p>
+				</div>
 			</div>
 			<div class="col-md-6"></div>
 		</div>

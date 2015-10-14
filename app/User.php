@@ -29,7 +29,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'password','notes','username'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -51,6 +51,13 @@ class User extends Model implements AuthenticatableContract,
     public function assignRole($role)
     {
         return $this->roles()->save(Role::whereName($role)->firstOrFail());
+    }
+
+    public function assignRoleByID($roleID)
+    {
+        $this->roles()->detach();
+        $role = Role::whereId($roleID)->firstOrFail();
+        return $this->roles()->save($role);
     }
 
     public function hasRole($role)

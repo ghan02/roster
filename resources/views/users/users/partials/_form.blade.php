@@ -3,9 +3,20 @@
 	{!!Form::text('name',null, ['class'=>'form-control'])!!}
 </div>
 
-<div class="form-group">
-	<label for="name">Email</label>
-	{!!Form::email('name',null, ['class'=>'form-control'])!!}
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label for="email">Email</label>
+			{!!Form::email('email',null, ['class'=>'form-control'])!!}
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="form-group">
+			<label for="username">UserName</label>
+			{!!Form::text('username',null, ['class'=>'form-control'])!!}
+		</div>
+	</div>
 </div>
 
 <div class="form-group">
@@ -24,10 +35,21 @@
 	</div>
 </div>
 
+
+@if($mode == true)
+	<div class="form-group">
+		<label for="notes">Role</label>
+		{!!Form::select('role_id',$roles,null,['class'=>'form-control'])!!}
+	</div>
+@elseif($user->roles()->count() > 0 )
 <div class="form-group">
 	<label for="notes">Role</label>
-	{!!Form::select('role_id',$roles,null,['class'=>'form-control'])!!}
+	{!!Form::select('role_id',$roles,$user->roles()->first()->id,['class'=>'form-control'])!!}
 </div>
+
+
+@endif
+
 
 <div class="form-group">
 	<label for="notes">Notes</label>

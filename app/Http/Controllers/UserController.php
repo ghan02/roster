@@ -39,7 +39,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $user = new User;   
+        $user->fill($request->all());
+        $user->save();
+        $user->assignRoleByID($request->get('role_id'));
+        
+
+        dd('new user was created');
     }
 
     /**
@@ -61,8 +68,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        $roles = Role::lists('name','id');
+        
+        $user = User::whereId($id)->first();
+        
+        $roles = Role::lists('name','id')->toArray();
         return view('users.users.edit')->withUser($user)->withRoles($roles);
     }
 
@@ -75,7 +84,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);   
+        $user->fill($request->all());
+        $user->save();
+        $user->assignRoleByID($request->get('role_id'));
+        
+
+        dd('new user was created');
     }
 
     /**

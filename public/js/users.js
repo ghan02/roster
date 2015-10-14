@@ -3,6 +3,7 @@ new Vue({
 	data: {
 		users:[], 
 		teams:[],
+		role:'',
 		teamMates :[],
 		currentUser :''
 	},
@@ -19,6 +20,7 @@ new Vue({
 		getTeams:function(user) {
 			this.$set('teams',user.teams);
 			this.$set('currentUser',user.name);
+			this.$set('role',user.roles[0].label);
 
 		}
 	}
