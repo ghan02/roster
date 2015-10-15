@@ -13,9 +13,17 @@
 
 	<div class="row">
 		
-		{!! Form::model($event, array('method' => 'PATCH','role'=>'form', 'id'=>'my-awesome-dropzone','class'=>'dropzone','route' => array('events.update', $event->id))) !!}
+		{!! Form::model($event, array('method' => 'PATCH','role'=>'form', 'route' => array('events.update', $event->id))) !!}
 			@include('users.events.partials._form',['type'=>'edit','event'=>$event,'eventtypes'=>$eventtypes])
 		{!!Form::close()!!}
+		
+		{!! Form::model($event, array('method' => 'PATCH','role'=>'form', 'id'=>'my-awesome-dropzone','class'=>'dropzone','route' => array('events.uploadfile', $event->id))) !!}
+			<div class="fallback">
+			 	<input name="file" type="file" multiple />
+			</div>
+			
+		{!!Form::close()!!}
+
 	</div>
 
 @stop

@@ -1,3 +1,8 @@
+Vue.filter('length', function (value) {
+	console.log(value);
+   return value.length;
+});
+
 new Vue({
 	el: '#users',
 	data: {

@@ -26,6 +26,7 @@ $router->group(['middleware'=>'auth'], function($router) {
 	Route::get('getUserEvents','PagesController@getUserEvents');
 	Route::get('getApprovedUserEvents','PagesController@getApprovedUserEvents');
 	Route::get('downloadfile/{file}','PagesController@downloadfile');
+	Route::patch('uploadfile/{id}',['as'=>'events.uploadfile','uses'=>'RostereventController@uploadFile']);
 
 });
 

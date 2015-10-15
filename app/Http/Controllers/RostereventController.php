@@ -9,6 +9,8 @@ use App\Rosterevent;
 use Auth;
 use App\Eventtype;
 use Response;
+use Log;
+use App\Attachment;
 
 class RostereventController extends Controller
 {
@@ -101,7 +103,7 @@ class RostereventController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        Log::info($request->all());
         $event = Rosterevent::find($id);
         
         if($event->user_id != Auth::user()->id)
@@ -136,5 +138,24 @@ class RostereventController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function uploadFile(Request $request, $id) 
+    {
+        Log::info('going to process the upload');
+       $this->validate($request,[
+            'file' =>'required|mimes:jpg,jpeg,png,bmp,doc,docx,pdf,ppt,pptx'
+        ]);
+
+       $file = $request->file('file');
+       $name = time().$file->getClientOriginalName();
+       $file->move('events/uploads', $name);
+       $attachment = new Attachment;
+       $attachment->filename= $file->getClientOriginalName();
+       $attachment->location = 'events/uploads/'.$name;
+       $attachment->save();
+       $event = Rosterevent::findOrFail($id);
+       $event->attachments()->save($attachment);
+
     }
 }

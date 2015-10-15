@@ -8,6 +8,7 @@ class Attachment extends Model
 {
     protected $table = 'attachments';
     protected $fillable = ['filename','location'];
+    public $timestamps = false;
 
     public function events()
     {

@@ -57,8 +57,25 @@
 <hr>
 
 @if($type=='edit')
-	<div class="fallback">
-	    <input name="file" type="file" multiple />
+	
+	<div style="margin-bottom: 10px;">
+		<h4>Currently uploaded files</h4>
+		<ul>
+			@foreach($event->attachments()->get() as $attachment)
+				<li>
+					<small>
+						<a href="{!!asset($attachment->location)!!}" target="_blank">{!!$attachment->filename!!}
+							<a href="#" class="btn btn-xs "  data-toggle="tooltip" title="Delete this upload file"><span class="lnr lnr-cross"></span></a>
+						</a>
+					</small>
+				</li>
+			@endforeach
+		</ul>
+
+		
+	</div>
+	<div>
+		<button class="btn btn-sm btn-primary"> <span class="lnr lnr-link"></span> Add Links</button>
 	</div>
 @else
 	<p><small class="text-warning"><span class="lnr lnr-bullhorn"></span> You must save the event first in order to upload files to it.</small></p>
