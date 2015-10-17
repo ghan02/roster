@@ -142,19 +142,26 @@ class RostereventController extends Controller
 
     public function uploadFile(Request $request, $id) 
     {
-        Log::info('going to process the upload');
        $this->validate($request,[
             'file' =>'required|mimes:jpg,jpeg,png,bmp,doc,docx,pdf,ppt,pptx'
         ]);
+       $event = Rosterevent::findOrFail($id);
 
+       // user should not be allowed to upload files to an event that is not his/her and/or is not a team 
+       // event.
+
+
+       if($event->user_id !== Auth::user()->id && !$event->isteamevent)
+            return $resonse()->json('You are not an owner of this event id and this is not a team event. Hence the file was not uploaded');
+        
        $file = $request->file('file');
+       $directoryName = 'events/uploads/'.time().'/';
        $name = time().$file->getClientOriginalName();
-       $file->move('events/uploads', $name);
+       $file->move($directoryName, $name);
        $attachment = new Attachment;
        $attachment->filename= $file->getClientOriginalName();
-       $attachment->location = 'events/uploads/'.$name;
+       $attachment->location = $directoryName.$name;
        $attachment->save();
-       $event = Rosterevent::findOrFail($id);
        $event->attachments()->save($attachment);
 
     }

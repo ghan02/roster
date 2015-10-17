@@ -53,7 +53,15 @@
 		</div>
 	</div>
 </div>
-
+<hr>
+<div class="row">
+	<div class="col-md-10">
+		<small>Click the Add links button to Add External Links to this event.</small>
+	</div>
+	<div class="col-md-1">
+			<button class="btn btn-sm btn-primary"> <span class="lnr lnr-link"></span> Add Links</button>
+	</div>
+</div>
 <hr>
 
 @if($type=='edit')
@@ -74,9 +82,7 @@
 
 		
 	</div>
-	<div>
-		<button class="btn btn-sm btn-primary"> <span class="lnr lnr-link"></span> Add Links</button>
-	</div>
+
 @else
 	<p><small class="text-warning"><span class="lnr lnr-bullhorn"></span> You must save the event first in order to upload files to it.</small></p>
 @endif

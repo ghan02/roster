@@ -21,7 +21,7 @@
 			<div class="fallback">
 			 	<input name="file" type="file" multiple />
 			</div>
-			
+			<small class="text text-primary">You can only upload files of the following types : <span class="label label-default">jpg</span> <span class="label label-default">jpeg</span> <span class="label label-default">png</span> <span class="label label-default">bmp</span> <span class="label label-default">doc</span> <span class="label label-default">docx</span> <span class="label label-default">pdf</span> <span class="label label-default">ppt</span> <span class="label label-default">pptx</span></small>
 		{!!Form::close()!!}
 
 	</div>
@@ -37,6 +37,11 @@
 				todayHighlight: true,
 			});
 			$('.colorpicker').colorpicker({format:'hex'});
+
+			Dropzone.options.myAwesomeDropzone = {
+			  maxFilesize: 2, // MB
+			  acceptedFiles:'image/*','doc','docx','pdf','ppt','pptx'
+			};
 		})
 	</script>
 @stop
